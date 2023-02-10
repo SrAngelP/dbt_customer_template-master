@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  dbt:
+    environment:
+      DEBUG: 1
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/app/
+      - ./conf/.dbt/:/root/.dbt/
+      - ~/.ssh:/root/.ssh

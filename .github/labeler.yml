@@ -1,0 +1,87 @@
+system_transformation:
+- models/system_transformation/**
+- models/system_transformation/**/*
+
+macros:
+- macros/**
+- macros/**/*
+
+mcdm:
+- models/mcdm/**
+- models/mcdm/**/*
+
+k8s:
+- models/k8s/**
+- models/k8s/**/*
+
+legacy_research:
+- models/custom_models/im_1405__legacy_research/**
+- models/custom_models/im_1405__legacy_research/**/*
+
+fastg8:
+- models/custom_models/im_1787_649_fastg8/**
+- models/custom_models/im_1787_649_fastg8/**/*
+
+lamark_media:
+- models/custom_models/im_3641_52f_lamark_media/**
+- models/custom_models/im_3641_52f_lamark_media/**/*
+
+wantable:
+- models/custom_models/im_3860_a46_wantable/**
+- models/custom_models/im_3860_a46_wantable/**/*
+
+webfx:
+- models/custom_models/im_3906_030_webfx/**
+- models/custom_models/im_3906_030_webfx/**/*
+
+docebo:
+- models/custom_models/im_4770_4e7_docebo/**
+- models/custom_models/im_4770_4e7_docebo/**/*
+
+asus:
+- models/custom_models/im_4900_cf2_asus/**
+- models/custom_models/im_4900_cf2_asus/**/*
+
+bluewater:
+- models/custom_models/im_4961_a57_bluewater/**
+- models/custom_models/im_4961_a57_bluewater/**/*
+
+rb_moscow:
+- models/custom_models/im_4971_4ac_rb_moscow/**
+- models/custom_models/im_4971_4ac_rb_moscow/**/*
+
+starz:
+- models/custom_models/im_5630_a8e_starz/**
+- models/custom_models/im_5630_a8e_starz/**/*
+
+jaa_media:
+- models/custom_models/jaa_media/**
+- models/custom_models/jaa_media/**/*
+
+drake_cooper:
+- models/custom_models/im_5819__drake_cooper/**
+- models/custom_models/im_5819__drake_cooper/**/*
+
+moster_us:
+- models/custom_models/im_5978_a82_moster_us/**
+- models/custom_models/im_5978_a82_moster_us/**/*
+
+rainmaker_ad_ventures:
+- models/custom_models/im_5979_d3d_rainmaker_ad_ventures/**
+- models/custom_models/im_5979_d3d_rainmaker_ad_ventures/**/*
+
+xenopsi:
+- models/custom_models/im_6084_b0d_xenopsi/**
+- models/custom_models/im_6084_b0d_xenopsi/**/*
+
+r30_ventures:
+- models/custom_models/im_6221_f73_r30_ventures/**
+- models/custom_models/im_6221_f73_r30_ventures/**/*
+
+agency_demo:
+- models/custom_models/im_agency_demo/**
+- models/custom_models/im_agency_demo/**/*
+
+agency_test:
+- models/custom_models/im_test_tst_agency_test/**
+- models/custom_models/im_test_tst_agency_test/**/*

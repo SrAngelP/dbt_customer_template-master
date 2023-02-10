@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  dbt:
+    tty: true
+    build: .
+    working_dir: /usr/app/
+    environment:
+      DB_PORT: 443
+    command: bash
