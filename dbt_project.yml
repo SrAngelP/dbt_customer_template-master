@@ -33,8 +33,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 #TODO: Uncomment when you'll create models
-#models:
-#  dbt_customer_template:
+models:
+  dbt_customer_template:
+    # Applies to all files under models/examples/
+    examples:
+      materialized: view
 
 vars:
   custom_schema: '{{ target.schema }}'

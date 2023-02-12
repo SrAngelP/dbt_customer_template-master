@@ -1,6 +1,7 @@
-default:  
+default:
+  target: default
   outputs:
-    agency_test:
+    default:
       type: bigquery
       method: service-account
       database: "{{ env_var('BIGQUERY_DB_NAME') }}"
@@ -11,8 +12,9 @@ default:
       keyfile: conf/.dbt/gbq_creds.json
       
 clickhouse:
+  target: option2
   outputs:
-    agency_test:
+    option2:
       type: clickhouse
       host: "{{ env_var('CH_DB_HOST') }}"
       user: "{{ env_var('CH_DB_USER') }}"
