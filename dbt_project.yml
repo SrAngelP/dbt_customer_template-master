@@ -38,6 +38,13 @@ models:
     # Applies to all files under models/examples/
     examples:
       materialized: view
+  
+#  google_ads:
+#    materialized: table
 
 vars:
   custom_schema: '{{ target.schema }}'
+
+
+  google_ads_database: 'im-xxxx-yyy'
+  google_ads_schema: 'dbt_srangelp' 

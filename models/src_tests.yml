@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: test
+    database: 'im-xxxx-yyy'
+    schema: 'dbt_srangelp'
+    tables:
+      - name: country_region
+      - name: severity_type

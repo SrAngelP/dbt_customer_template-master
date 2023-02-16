@@ -4,8 +4,8 @@ default:
     default:
       type: bigquery
       method: service-account
-      database: "{{ env_var('BIGQUERY_DB_NAME') }}"
-      schema: "{{ env_var('BIGQUERY_DB_SCHEMA') }}"
+      project: "{{ env_var('BIGQUERY_DB_NAME') }}"
+      dataset: "{{ env_var('BIGQUERY_DB_SCHEMA') }}"
       threads: 10
       timeout_seconds: 300
       priority: interactive
