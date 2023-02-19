@@ -1,0 +1,22 @@
+name: dbt
+on:
+  schedule:
+  # https://crontab.guru <-- for generating CRON expression
+    - cron: '0 2 * * *'
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Python enviroment
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Install dbt
+        run: pip install dbt
+      - name: Install dependencies
+        run: dbt deps
+      - name: Run dbt
+        run: dbt run
