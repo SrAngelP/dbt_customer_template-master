@@ -4,22 +4,22 @@ default:
     default:
       type: bigquery
       method: service-account
-      project: im-xxxx-yyy
-      dataset: dbt_srangelp
+      database: "{{ env_var('BIGQUERY_DB_NAME') }}"
+      schema: "{{ env_var('BIGQUERY_DB_SCHEMA') }}"
       threads: 10
       timeout_seconds: 300
       priority: interactive
       keyfile: conf/.dbt/gbq_creds.json
-      
+ 
 clickhouse:
-  target: option2
+  target: dev
   outputs:
-    option2:
+    dev:
       type: clickhouse
       host: "{{ env_var('CH_DB_HOST') }}"
       user: "{{ env_var('CH_DB_USER') }}"
       password: "{{ env_var('CH_DB_PASSWORD') }}"
-      port: "{{ env_var('CH_DB_PORT', '8443') | as_number }}"
+      port: "{{ env_var('CH_DB_PORT', '9440') | as_number }}"
       schema: "{{ env_var('CH_DB_SCHEMA') }}"
       database: "{{ env_var('CH_DB_NAME') }}"
       secure: True
