@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v0.1.0
+      - uses: actions/checkout@v3
 
       - name: dbt-run
         uses: mwhitaker/dbt-action@master
