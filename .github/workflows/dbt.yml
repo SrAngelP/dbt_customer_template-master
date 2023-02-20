@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Install dbt
-        run: pip install dbt
+        run: pip install dbt-core
       - name: Install dependencies
         run: dbt deps
       - name: Run dbt
