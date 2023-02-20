@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '20 8 * * *'
+    - cron: '55 8 * * *'
 
 jobs:
   dbt:
@@ -20,3 +20,5 @@ jobs:
         #run: dbt deps
       - name: Run dbt
         run: dbt run
+        env:
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
