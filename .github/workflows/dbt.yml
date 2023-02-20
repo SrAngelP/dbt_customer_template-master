@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '55 8 * * *'
+    - cron: '0 16 * * *'
 
 jobs:
   dbt:
@@ -18,7 +18,11 @@ jobs:
         run: pip install dbt-core
       #- name: Install dependencies
         #run: dbt deps
+      #- name: Run dbt
+        #run: dbt run
       - name: Run dbt
-        run: dbt run
+        uses: mwhitaker/dbt-action@master
+        with:
+          dbt_command: "dbt run "
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
