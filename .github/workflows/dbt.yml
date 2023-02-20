@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '15 7 20 2 *'
+    - cron: '40 7 * * *'
 
 jobs:
   dbt:
@@ -16,7 +16,7 @@ jobs:
           python-version: 3.x
       - name: Install dbt
         run: pip install dbt-core
-      - name: Install dependencies
-        run: dbt deps
+      #- name: Install dependencies
+        #run: dbt deps
       - name: Run dbt
         run: dbt run
