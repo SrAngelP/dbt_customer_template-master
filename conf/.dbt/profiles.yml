@@ -9,7 +9,7 @@ default:
       threads: 10
       timeout_seconds: 300
       priority: interactive
-      keyfile: conf/.dbt/gbq_creds.json
+      keyfile: ./creds.json
  
 clickhouse:
   target: dev
