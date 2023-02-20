@@ -2,7 +2,7 @@ name: test
 
 on:
   schedule:
-   - cron:  '45 9 * * *'
+   - cron:  '00 10 * * *'
 
 jobs:
   action:
@@ -14,6 +14,6 @@ jobs:
       - name: dbt-run
         uses: mwhitaker/dbt-action@master
         with:
-          dbt_command: "dbt run --profiles-dir ."
+          dbt_command: "dbt run"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
