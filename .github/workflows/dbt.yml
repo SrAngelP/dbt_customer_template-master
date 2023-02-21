@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '0 9 * * *'
+    - cron: '50 9 * * *'
 
 jobs:
   dbt:
@@ -27,6 +27,6 @@ jobs:
           #dbt_command: "dbt run "
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-          DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
+          #DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
           DBT_PROFILES_DIR: ./
 
