@@ -2,7 +2,7 @@ name: test
 
 on:
   schedule:
-   - cron:  '49 00 * * *'
+   - cron:  '12 1 * * *'
 
 jobs:
   action:
@@ -17,3 +17,5 @@ jobs:
           dbt_command: "run dbt"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+          DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
+          DBT_PROFILES_DIR: ./conf/.dbt
