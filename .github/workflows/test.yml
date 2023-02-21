@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: dbt-deps
-        uses: mwhitaker/dbt-action@master
-        with:
-          dbt_command: "dbt deps"
+      #- name: dbt-deps
+        #uses: mwhitaker/dbt-action@master
+        #with:
+          #dbt_command: "dbt deps"
       - name: dbt-run
         uses: mwhitaker/dbt-action@master
         with:
-          dbt_command: "dbt run"
+          dbt_command: "dbt deps run"
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
