@@ -9,4 +9,4 @@ default:
       threads: 10
       timeout_seconds: 300
       priority: interactive
-      keyfile: ./creds.json
+      keyfile: "{{ env_var('DBT_BIGQUERY_TOKEN') }}"
