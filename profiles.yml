@@ -1,0 +1,12 @@
+default:
+  target: default
+  outputs:
+    default:
+      type: bigquery
+      method: service-account
+      database: im-xxxx-yyy
+      schema: dbt_srangelp
+      threads: 10
+      timeout_seconds: 300
+      priority: interactive
+      keyfile: "{{ env_var('DBT_BIGQUERY_KEYFILE') }}"
