@@ -19,12 +19,6 @@ jobs:
         run: pip install dbt-bigquery
       - name: Install dependencies
         run: dbt deps
-      - name: Run dbt
-        run: dbt run
-      #- name: Run dbt
-        #uses: mwhitaker/dbt-action@master
-        #with:
-          #dbt_command: "dbt run "
       - name: create-json
         id: create-json
         uses: jsdaniell/create-json@v1.2.2
@@ -32,6 +26,12 @@ jobs:
           name: "DBT_BIGQUERY_TOKEN.json"
           json: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           dir: './'
+      - name: Run dbt
+        run: dbt run
+      #- name: Run dbt
+        #uses: mwhitaker/dbt-action@master
+        #with:
+          #dbt_command: "dbt run "
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           #DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
