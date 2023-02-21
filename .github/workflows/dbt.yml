@@ -27,5 +27,5 @@ jobs:
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
-          DBT_PROFILES_DIR: ./t
+          DBT_PROFILES_DIR: ./
 
