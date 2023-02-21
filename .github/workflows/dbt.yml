@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '30 10 * * *'
+    - cron: '00 16 * * *'
 
 jobs:
   dbt:
@@ -25,6 +25,13 @@ jobs:
         #uses: mwhitaker/dbt-action@master
         #with:
           #dbt_command: "dbt run "
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "DBT_BIGQUERY_TOKEN.json"
+          json: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+          dir: './'
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           #DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
