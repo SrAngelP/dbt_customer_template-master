@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '40 3 * * *'
+    - cron: '40 4 * * *'
 
 jobs:
   dbt:
