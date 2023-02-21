@@ -2,12 +2,12 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '30 5 * * *'
+    - cron: '10 6 * * *'
 
 jobs:
   dbt:
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
+    permissions: write-all
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
