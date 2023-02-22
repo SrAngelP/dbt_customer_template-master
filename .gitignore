@@ -7,6 +7,7 @@ logs/
 conf/.dbt/.user.yml
 conf/.dbt/gbq_creds.json
 conf/.dbt/*.json
+conf/.dbt/profiles.yml
 .config/
 .env
 project.env
