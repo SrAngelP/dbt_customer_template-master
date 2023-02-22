@@ -4,12 +4,12 @@ default:
     default:
       type: bigquery
       method: service-account
-      database: "{{ env_var('BIGQUERY_DB_NAME') }}"
-      schema: "{{ env_var('BIGQUERY_DB_SCHEMA') }}"
+      database: im-xxxx-yyy
+      schema: dbt_srangelp
       threads: 10
       timeout_seconds: 300
       priority: interactive
-      keyfile: conf/.dbt/gbq_creds.json
+      keyfile: "{{ env_var('DBT_BIGQUERY_KEYFILE') }}"
  
 clickhouse:
   target: dev

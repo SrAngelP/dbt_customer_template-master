@@ -2,21 +2,38 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '0 2 * * *'
+    - cron: '00 21 * * *'
 
 jobs:
   dbt:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Python enviroment
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
       - name: Install dbt
-        run: pip install dbt
+        run: pip install dbt-bigquery
       - name: Install dependencies
         run: dbt deps
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "DBT_BIGQUERY_TOKEN.json"
+          json: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+          dir: './'
       - name: Run dbt
         run: dbt run
+      #- name: Run dbt
+        #uses: mwhitaker/dbt-action@master
+        #with:
+          #dbt_command: "dbt run "
+        env:
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+          #DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
+          DBT_PROFILES_DIR: ./
+
