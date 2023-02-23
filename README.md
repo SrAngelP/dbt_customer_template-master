@@ -1,6 +1,6 @@
 # DBT Customer Template Master
 
-This repository is the result of the work and practice for the Improvado Internee and is proof of the process made for Angel Pat.
+This repository is the result of the work and practice for the Improvado Internee and is proof of the process made by Angel Pat.
 
 ## Initial process
 
