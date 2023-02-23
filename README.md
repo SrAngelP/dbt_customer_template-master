@@ -28,3 +28,43 @@ We tried this option to see what would happen if by some reason the data of our 
 
 ## Schedule runs
 After checking the errors, we move forward to schedule some runs to determined hours. In this task we used the github actions. In order to do it, we need to create a yml file under the folder "/.github/workflows" in the current repo. To set the hours in which the models were going to run we used ![Cron](https://crontab.guru), and to resume, after some hard try-and-error, research of the yml syntax and the github actions, and making use of the secrets of github, we succeded in schedule the models to keep running every day.
+
+## List of files
+### Loaded
+- account_history
+- account_stats
+- ad_group_criterion_history
+- ad_group_history
+- ad_group_stats
+- ad_history
+- ad_stats
+- campaign_history
+- campaign_stats
+- keyword_stats
+
+### Made by the models
+- google_ads__account_report
+- google_ads__ad_group_report
+- google_ads__campaign_report
+- google_ads__keyword_report
+- google_ads__url_report
+- stg_google_ads__account_history
+- stg_google_ads__account_history_tmp
+- stg_google_ads__account_stats
+- stg_google_ads__account_stats_tmp
+- stg_google_ads__ad_group_criterion_history
+- stg_google_ads__ad_group_criterion_history_tmp
+- stg_google_ads__ad_group_history
+- stg_google_ads__ad_group_history_tmp
+- stg_google_ads__ad_group_stats
+- stg_google_ads__ad_group_stats_tmp
+- stg_google_ads__ad_history
+- stg_google_ads__ad_history_tmp
+- stg_google_ads__ad_stats
+- stg_google_ads__ad_stats_tmp
+- stg_google_ads__campaign_history
+- stg_google_ads__campagin_history_tmp
+- stg_google_ads__keyword_stats
+- stg_google_ads__Keyword_stats_tmp
+
+![Some of the files](https://github.com/SrAngelP/dbt_customer_template-master/blob/8319900588c42231521eed3397552cd6c2b269f3/images/files_bq.png)
