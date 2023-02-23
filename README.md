@@ -1,42 +1,27 @@
-# DBT Project Template
+# DBT Customer Template Master
 
-This repository provides a starting point for creating a new DBT project. It includes a basic file structure and some example files to help you get started quickly.
+This repository is the result of the work and practice for the Improvado Internee and is proof of the process made for Angel Pat.
 
-## Structure
+## Initial process
 
-- `models/`: This directory contains all of the DBT models for the project.
-- `macros/`: This directory contains any macros that are used in the models.
-- `data/`: This directory contains any seed data that is used to populate the initial state of the data warehouse.
-- `tests/`: This directory contains any tests that are used to validate the project's models.
-- `dbt_project.yml`: This file contains the configuration for the DBT project, including the target database and schema.
-- `.env.example`: Copy this example into file `.env`. This file contains environment variables that are used to configure the project.
-- `conf/.dbt/profiles.yml`: This file contains the configuration for connecting to different environments (e.g. development, staging, production)
+First we needed to prepare the enviroment in the local machine to use. We employ the docker program to use its containers. In the containers we proceded to install dbt core and prepared the keys for the connections. For all that we used the template provided by the company, meanwhile, we also installed the extensions needed to made the container more useful. We created two accounts in differents databases to have a wide range of possibilities to try. For every account we took note and download the info and keys, proceded to employ them and tested te connections with each data source. At the same time, we search for the packages from fivetran to analize data. We chose the google_ads packages and used an example data to test the models it include.
 
-## Getting Started
+## Catching errors
+After having the enviroment started and the data loaded in the sources, we continued to test the models by trying to made errors, or erasing info, with the purpose of checking the behaviuor of the models, and also to prepare in the process of troubleshooting.
+We did twp types of catching errors: 
 
-1. Clone this repository to your local machine.
-2. Install the necessary dependencies by running `dbt deps`.
-3. Customize the file structure and example files to suit your needs.
-4. Fill the environment variables in the `.env` file.
-5. Configure the different environments in the `profiles.yml` file.
-6. Run `dbt run` to build the models and seed the data warehouse.
-7. Run `dbt test` to run any tests for the models.
+### Query Log
+The query log is a log that records all and every query received, and every client connected and disconnected.
+For this option we literally tried to submit queries with wrong name of columns, columns we have already deleted, or with wrong name of tables/datasets, the results vary from data source, but at the same time were the same. With different messages they indicated that the actions coulnd't complete.
 
-## Additional Resources
+![Error Query Log](https://github.com/SrAngelP/dbt_customer_template-master/blob/871fef36aa6fdb99c88b480077353c9dee70a83a/images/error2.png)
 
-- [Setting up a dbt environment for Windows](https://docs.google.com/document/d/1j9EmKB1o_SPXcTmCr8l7Q5Nn3VKt6dPZe-K0LpOJqvA/edit?usp=sharing)
-- [DBT documentation](https://docs.getdbt.com/)
-- [DBT community](https://discourse.getdbt.com/)
+### Dashboard
+For the next step we create a basic dashboard in the program ![Power BI](https://powerbi.microsoft.com/es-mx/), we connected it to our BigQuery data source and after the dashboard was created and saved, we erase one of the columns the dashboard made use of, to verify what would happen with the data in the file.
 
-## Best practices
+![Error Dashboard](https://github.com/SrAngelP/dbt_customer_template-master/blob/871fef36aa6fdb99c88b480077353c9dee70a83a/images/error4.png)
 
-- [DBT / SQL Best practices](docs/best_practices.MD)
-- [DBT Naming conventions](docs/naming_convention.MD)
+We tried this option to see what would happen if by some reason the data of our tables or visualizations was mdified, and know what to do.
 
-## Contributing
-
-If you would like to contribute to this template, please fork the repository and submit a pull request.
-
-## License
-
-This template is available under the [MIT License](LICENSE).
+## Schedule runs
+After checking the errors, we move forward to schedule some runs to determined hours. In this task we used the github actions. In order to do it, we need to create a yml file under the folder "/.github/workflows" in the current repo. To set the hours in which the models were going to run we used ![Cron](https://crontab.guru), and to resume, after some hard try-and-error, research of the yml syntax and the github actions, and making use of the secrets of github, we succeded in schedule the models to keep running every day.
