@@ -20,6 +20,8 @@ For this option we literally tried to submit queries with wrong name of columns,
 For the next step we create a basic dashboard in the program ![Power BI](https://powerbi.microsoft.com/es-mx/), we connected it to our BigQuery data source and after the dashboard was created and saved, we erase one of the columns the dashboard made use of, to verify what would happen with the data in the file.
 
 ![Error Dashboard](https://github.com/SrAngelP/dbt_customer_template-master/blob/871fef36aa6fdb99c88b480077353c9dee70a83a/images/error4.png)
+(In the image we can read the error "The visual object can't be shown")
+
 
 We tried this option to see what would happen if by some reason the data of our tables or visualizations was mdified, and know what to do.
 
