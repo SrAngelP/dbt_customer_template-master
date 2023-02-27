@@ -1,25 +1,39 @@
-name: test
-
+name: dbt
 on:
   schedule:
-   - cron:  '05 19 * * *'
+  # https://crontab.guru <-- for generating CRON expression
+    - cron: '50 23 * * *'
 
 jobs:
-  action:
+  dbt:
     runs-on: ubuntu-latest
-
+    permissions: write-all
     steps:
-      - uses: actions/checkout@v3
-
-      #- name: dbt-deps
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python enviroment
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+      - name: Install dbt "googleapis-common-protos<1.6"
+        run: pip install dbt-bigquery
+      - name: Install dependencies
+        run: dbt deps
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "DBT_BIGQUERY_TOKEN.json"
+          json: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+          dir: './'
+      - name: Run dbt
+        run: dbt run
+      #- name: Run dbt
         #uses: mwhitaker/dbt-action@master
         #with:
-          #dbt_command: "dbt deps"
-      - name: dbt-run
-        uses: mwhitaker/dbt-action@master
-        with:
-          dbt_command: "dbt deps; dbt run"
+          #dbt_command: "dbt run "
         env:
           DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-          DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
-          DBT_PROFILES_DIR: ./conf/.dbt
+          #DBT_BIGQUERY_KEYFILE: ./DBT_BIQUERY_TOKEN.json
+          DBT_PROFILES_DIR: ./
+
