@@ -14,6 +14,10 @@ We did twp types of catching errors:
 The query log is a log that records all and every query received, and every client connected and disconnected.
 For this option we literally tried to submit queries with wrong name of columns, columns we have already deleted, or with wrong name of tables/datasets, the results vary from data source, but at the same time were the same. With different messages they indicated that the actions coulnd't complete.
 
+![Query example](https://github.com/SrAngelP/dbt_customer_template-master/blob/5a32c80c02d3bd5f7f5ea7c7ab474e9cb1f01831/images/test_model.png)
+
+In the example, we try to acces a column with the name of "id_" but, as you can guess, that column doesn't exist that's why the next message is deployed.  
+
 ![Error Query Log](https://github.com/SrAngelP/dbt_customer_template-master/blob/871fef36aa6fdb99c88b480077353c9dee70a83a/images/error2.png)
 
 ### Dashboard
