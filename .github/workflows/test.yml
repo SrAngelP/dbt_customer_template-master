@@ -1,8 +1,8 @@
-name: dbt
+name: test
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '00 23 * * *'
+    - cron: '04 00 * * *'
 
 jobs:
   dbt:
