@@ -2,7 +2,7 @@ name: dbt
 on:
   schedule:
   # https://crontab.guru <-- for generating CRON expression
-    - cron: '00 21 * * *'
+    - cron: '00 00 * * *'
   workflow_dispatch:
 
 jobs:
