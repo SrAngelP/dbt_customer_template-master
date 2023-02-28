@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Install dbt 
-        run: pip install dbt-bigquery --no--deps
+        run: pip install dbt-bigquery --no-deps
       - name: Install dependencies
         run: dbt deps
       - name: create-json
