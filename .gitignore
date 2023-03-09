@@ -9,5 +9,4 @@ conf/.dbt/gbq_creds.json
 conf/.dbt/*.json
 conf/.dbt/profiles.yml
 .config/
-
 project.env
